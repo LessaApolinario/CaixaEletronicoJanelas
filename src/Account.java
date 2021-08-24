@@ -1,22 +1,18 @@
-public class Account {
+import javax.swing.JOptionPane;
 
+public class Account {
   private String name;
   private String cpf;
   private double balance;
-  private double withdraw;
 
   // construtor
-  public Account(String name, String cpf, double balance, double withdraw) {
+  public Account(String name, String cpf, double balance) {
     this.name = name;
 
     this.cpf = cpf;
 
     if (balance > 0.0) {
       this.balance = balance;
-    }
-
-    if (withdraw > 0.0) {
-      this.withdraw = withdraw;
     }
   }
 
@@ -25,6 +21,7 @@ public class Account {
     this.name = name;
   }
 
+  // retorna o nome
   public String getName() {
     return name;
   }
@@ -34,6 +31,7 @@ public class Account {
     this.cpf = cpf;
   }
 
+  // retorna o cpf
   public String getCPF() {
     return cpf;
   }
@@ -45,10 +43,21 @@ public class Account {
     }
   }
 
+  // retorna o saldo
+  public double getBalance() {
+    return balance;
+  }
+
   // realiza um saque
   public void withdraw(double withdrawAmount) {
     if (withdrawAmount > 0.0) {
       balance -= withdrawAmount;
     }
+  }
+
+  // exibe informações da conta
+  public void displayAccount() {
+    String message = String.format("\nNome: %s\nCPF: %s\nSaldo: %.2f\n", getName(), getCPF(), Double.valueOf(getBalance()));
+    JOptionPane.showMessageDialog(null, message);
   }
 }
