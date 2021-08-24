@@ -50,7 +50,7 @@ public class Account {
 
   // realiza um saque
   public void withdraw(double withdrawAmount) {
-    if (withdrawAmount > 0.0 && withdrawAmount <= getBalance()) {
+    if (withdrawAmount <= getBalance()) {
       balance -= withdrawAmount;
     } else {
       JOptionPane.showMessageDialog(null, "Saldo insuficiente!");
