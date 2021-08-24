@@ -25,7 +25,7 @@ public class Transactions {
         account1.deposit(Double.parseDouble(mybalance));
       } else if (number == 0) {
         String myWithdraw = JOptionPane.showInputDialog("Qual a quantia a ser sacada?");
-        // convertendo para double e adicionando o saldo no objeto account1
+        // convertendo para double e realizando o saque no objeto account1
         account1.withdraw(Double.parseDouble(myWithdraw));
       }
 
